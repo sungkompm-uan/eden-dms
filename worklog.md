@@ -880,3 +880,18 @@ Work Log:
 Stage Summary:
 - GitHub push ปิดสมบูรณ์: https://github.com/skpuan07-cmd/eden-dms — โค้ดล่าสุดทุก commit อยู่บน remote แล้ว ไม่มีค้างในเครื่อง
 - ข้อควรระวังสำหรับเซสชันถัดไป: remote origin ชี้ไปที่ skpuan07-cmd แล้ว อย่าเปลี่ยนกลับไป sungkomp-ai (PAT เก่าถูก revoke และบัญชีเก่าไม่รับ token ใหม่นี้)
+
+---
+Task ID: 31
+Agent: main (Z.ai Code)
+Task: push GitHub ด้วย PAT ตัวที่สาม (ผู้ใช้ส่ง token ใหม่ต่อเนื่องจาก Task 30)
+
+Work Log:
+- ตรวจ token ใหม่: เป็นของบัญชี sungkompm-uan (scope: repo, codespace, write:discussion) — บัญชีที่สามที่เกี่ยวข้องกับโปรเจกต์ (sungkomp-ai → skpuan07-cmd → sungkompm-uan)
+- สิทธิ์ตรวจสอบ: ไม่มีสิทธิ์ push ทั้ง sungkomp-ai/eden-dms (เดิม) และ skpuan07-cmd/eden-dms (Task 30) — มีแค่ pull
+- สร้าง repo ใหม่ sungkompm-uan/eden-dms ผ่าน API และ push -u origin main สำเร็จ — ประวัติเต็ม 9 commit ขึ้นครบ (6a665f0 → Task 30 worklog 14da08f)
+- ตอนจบ: main up to date กับ origin/main, working tree clean
+
+Stage Summary:
+- Remote origin ปัจจุบันชี้ไปที่ https://github.com/sungkompm-uan/eden-dms — เป็น push ปลายทางล่าสุด
+- ประวัติ repos ทั้งหมดที่เคยใช้: sungkomp-ai/eden-dms (PAT ถูก revoke), skpuan07-cmd/eden-dms (Task 30), sungkompm-uan/eden-dms (Task 31 — ปัจจุบัน)
